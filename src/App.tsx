@@ -1,8 +1,8 @@
 import './App.scss';
 import { NavLink, Routes, Route, Navigate } from 'react-router-dom';
 import { PageWelcome } from './pages/PageWelcome';
-import { PageInfo } from './pages/PageInfo';
-import { PageAbout } from './pages/PageAbout';
+import { PageBooksWithRest } from './pages/PageBooksWithRest';
+import { PageBooksWithGraphql } from './pages/PageBooksWithGraphql';
 
 function App() {
 	return (
@@ -10,14 +10,17 @@ function App() {
 			<h1>Info Site</h1>
 			<nav>
 				<NavLink to="/welcome">Welcome</NavLink>
-				<NavLink to="/info">Info</NavLink>
-				<NavLink to="/about">About</NavLink>
+				<NavLink to="/booksWithRest">Books with REST</NavLink>
+				<NavLink to="/booksWithGraphql">Books with GraphQL</NavLink>
 			</nav>
 
 			<Routes>
 				<Route path="/welcome" element={<PageWelcome />} />
-				<Route path="/info" element={<PageInfo />} />
-				<Route path="/about" element={<PageAbout />} />
+				<Route path="/booksWithRest" element={<PageBooksWithRest />} />
+				<Route
+					path="/booksWithGraphQL"
+					element={<PageBooksWithGraphql />}
+				/>
 				<Route path="/" element={<Navigate to="/welcome" replace />} />
 			</Routes>
 		</div>
