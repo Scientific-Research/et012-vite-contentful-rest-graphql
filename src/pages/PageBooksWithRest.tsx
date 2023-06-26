@@ -15,6 +15,7 @@ export const PageBooksWithRest = () => {
 		(async () => {
 			const response = await client.getEntries({
 				content_type: 'book',
+				// content_type: 'techBook'
 			});
 			const rawBooks = response.items;
 			const _books: IBook[] = rawBooks.map((rawBook: any) => {
